@@ -7,12 +7,12 @@ public class BirdFactory extends SpeciesFactory {
 	public Animals getAnimal(String type) {
 		if(Constants.Animals.Birds.papagal.equals(type))
 		{
-			return new papagal();
+			return new Papagal();
 		}
 		else
 			if(Constants.Animals.Birds.pelican.equals(type))
 			{
-				return new pelican();
+				return new Pelican();
 			}
 			else
 				throw new Exception("Invalid animal exception!");

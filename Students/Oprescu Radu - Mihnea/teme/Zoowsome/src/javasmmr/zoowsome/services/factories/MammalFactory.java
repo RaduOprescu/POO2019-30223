@@ -7,12 +7,12 @@ public class MammalFactory extends SpeciesFactory {
 	public Animals getAnimal(String type) {
 		if(Constants.Animals.Mammals.tigru.equals(type))
 		{
-			return new tigru();
+			return new Tigru();
 		}
 		else
 			if(Constants.Animals.Mammals.arici.equals(type))
 			{
-				return new arici();
+				return new Arici();
 			}
 			else
 			{

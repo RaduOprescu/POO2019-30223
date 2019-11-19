@@ -2,7 +2,7 @@ package javasmmr.zoowsome.models.animals;
 
 
 
-public abstract class tigru extends Animals{
+public abstract class Tigru extends Animals{
 	int age;
 	int ultimaMasa;
 
