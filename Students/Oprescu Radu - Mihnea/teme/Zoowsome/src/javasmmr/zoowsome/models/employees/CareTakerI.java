@@ -1,5 +1,7 @@
 package javasmmr.zoowsome.models.employees;
 
-public interface CareTakerI {
+import javasmmr.zoowsome.models.animals.Animals;
 
+public interface CareTakerI {
+	public String takeCareOf(Animals animal);
 }

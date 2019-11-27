@@ -1,5 +1,8 @@
 package javasmmr.zoowsome.services.factories;
 
-public abstract class EmployeeAbsFactory {
+import javasmmr.zoowsome.models.employees.Employee;
 
+public abstract class EmployeeAbsFactory {
+	
+	public abstract  Employee getEmployeeFactory(String type) throws Exception;
 }

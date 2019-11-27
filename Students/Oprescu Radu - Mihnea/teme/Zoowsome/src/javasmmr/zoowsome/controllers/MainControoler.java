@@ -15,7 +15,7 @@ public class MainControoler {
 		
 		CareTakerFactory abstractTakers = new CareTakerFactory();
 
-		
+	//eroare la creerea unui angajat	
 		Employee employee = abstractTakers.getEmployeeFactory(Constants.Employees.Caretaker);
 		employee.setDead(false);
 		employee.setNume("Ion");
