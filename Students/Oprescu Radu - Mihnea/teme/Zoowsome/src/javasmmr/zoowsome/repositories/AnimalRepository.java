@@ -5,11 +5,19 @@ import java.io.*;
 import java.util.ArrayList;
 
 import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
+
+import com.sun.xml.internal.txw2.Document;
+
 import javasmmr.zoowsome.models.animals.*;
 import javasmmr.zoowsome.models.interfaces.XML_Parsable;
 import javasmmr.zoowsome.services.factories.Constants;
+import jdk.internal.org.xml.sax.SAXException;
 
 import javax.xml.stream.events.*;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.*;
 
 public class AnimalRepository {
@@ -42,16 +50,18 @@ public class AnimalRepository {
 		XMLEventWriter eventWriter = outputFactory.createXMLEventWriter(new FileOutputStream(XML_FILENAME));
 		// Create a EventF actory
 		XMLEventFactory eventFactory = XMLEventFactory.newInstance();
-		XMLEventend = eventFactory.createDTD("\n ");
+		DTD XMLEventend = eventFactory.createDTD("\n ");
 		// Create a nd writ e Start Tag
 		StartDocument startDocument = eventFactory.createStartDocument();
 		eventWriter.add(startDocument);
 		// Create c ontent open tag
 		StartElement configStartElement = eventFactory.createStartElement("", "", "content");
 		eventWriter.add(configStartElement);
+		XMLEvent end;
 		eventWriter.add(end);
 		for (Animals animal : animals) {
-			StartElementsElement = eventFactory.createStartElement("", "", Constants.XML_TAGS.ANIMAL);
+			StartElement StartElementsElement = eventFactory.createStartElement("", "", Constants.XML_TAGS.ANIMAL);
+			XMLEvent sElement;
 			eventWriter.add(sElement);
 			eventWriter.add(end);
 			animal.encodeToXml(eventWriter);
@@ -69,7 +79,7 @@ public class AnimalRepository {
 		File fXmlFile = new File(XML_FILENAME);
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
-		Document doc = dBuilder.parse(fXmlFile);
+		org.w3c.dom.Document doc = dBuilder.parse(fXmlFile);
 		doc.getDocumentElement().normalize();
 		NodeList nodeList = doc.getElementsByTagName(Constants.XML_TAGS.ANIMAL);
 		for (int i = 0; i < nodeList.getLength(); i++) {

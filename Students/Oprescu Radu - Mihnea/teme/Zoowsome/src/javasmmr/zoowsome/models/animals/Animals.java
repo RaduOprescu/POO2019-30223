@@ -1,6 +1,9 @@
 package javasmmr.zoowsome.models.animals;
 
 import java.awt.Color;
+
+import jdk.internal.util.xml.XMLStreamException;
+
 import static javasmmr.zoowsome.repositories.AnimalRepository.createNode;
 
 
